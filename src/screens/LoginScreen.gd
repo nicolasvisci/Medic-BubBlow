@@ -92,3 +92,12 @@ func show_label():
 
 func hide_label():
 	notification_panel.hide()
+
+
+func _on_CreateAccount_pressed():
+	get_tree().change_scene("res://src/screens/RegistrationScreen.tscn")
+
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
+

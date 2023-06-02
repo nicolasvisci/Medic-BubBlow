@@ -181,3 +181,7 @@ func _on_GameModeButton_pressed():
 		leaderboard_scroll3.visible = false
 		PlayerData.game_mode = 1
 
+
+
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://src/screens/MenuScreen.tscn")

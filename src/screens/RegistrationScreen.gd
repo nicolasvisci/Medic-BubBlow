@@ -18,12 +18,7 @@ var profile := {
 } 
 
 func _ready():
-	check_microphone_permission()
 	set_timer()
-
-func check_microphone_permission():
-	if OS.get_name() == "Android":
-		OS.request_permissions()
 
 func set_timer():
 	add_child(timer)
@@ -55,7 +50,7 @@ func _on_RegisterButton_pressed() -> void:
 	profile.email = {"stringValue": email_field.text}
 	Firebase.update_document("users/%s" % Firebase.user_info.id, profile, http)
 	yield(get_tree().create_timer(2.0), "timeout")
-	get_tree().change_scene("res://src/screens/ChoiseScreen.tscn")
+	get_tree().change_scene("res://src/screens/LoginScreen.tscn")
 
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var response_body := JSON.parse(body.get_string_from_ascii())
@@ -73,3 +68,11 @@ func show_label():
 
 func hide_label():
 	notification_panel.hide()
+
+
+func _on_AlreadyRegisteredButton_pressed():
+	get_tree().change_scene("res://src/screens/LoginScreen.tscn")
+
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
