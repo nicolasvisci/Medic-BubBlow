@@ -26,3 +26,7 @@ func check_user_type():
 		item_list.remove_item(3)
 		item_list.remove_item(3)
 
+
+
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://src/screens/MenuScreen.tscn")

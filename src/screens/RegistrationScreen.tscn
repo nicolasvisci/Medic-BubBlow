@@ -29,10 +29,10 @@ theme = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = 750.0
-margin_top = 40.0
-margin_right = 1034.0
-margin_bottom = 299.0
+margin_left = 831.0
+margin_top = 31.0
+margin_right = 1115.0
+margin_bottom = 290.0
 texture = ExtResource( 4 )
 expand = true
 
@@ -89,10 +89,10 @@ placeholder_text = "Password"
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1054.0
-margin_top = -714.0
-margin_right = -331.0
-margin_bottom = -333.0
+margin_left = 1275.0
+margin_top = -716.0
+margin_right = -110.0
+margin_bottom = -335.0
 custom_constants/separation = 15
 
 [node name="RegisterButton" parent="Menu2" instance=ExtResource( 2 )]
@@ -100,7 +100,6 @@ margin_right = 535.0
 margin_bottom = 117.0
 rect_pivot_offset = Vector2( 200, 100 )
 text = "REGISTRATI"
-script = null
 
 [node name="AlreadyRegisteredButton" parent="Menu2" instance=ExtResource( 2 )]
 margin_top = 132.0
@@ -108,7 +107,6 @@ margin_right = 535.0
 margin_bottom = 249.0
 rect_pivot_offset = Vector2( 200, 100 )
 text = "HO UN ACCOUNT"
-script = null
 
 [node name="QuitButton" parent="Menu2" instance=ExtResource( 9 )]
 margin_top = 264.0

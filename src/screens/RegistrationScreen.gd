@@ -50,7 +50,7 @@ func _on_RegisterButton_pressed() -> void:
 	profile.email = {"stringValue": email_field.text}
 	Firebase.update_document("users/%s" % Firebase.user_info.id, profile, http)
 	yield(get_tree().create_timer(2.0), "timeout")
-	get_tree().change_scene("res://src/screens/LoginScreen.tscn")
+	get_tree().change_scene("res://src/screens/MedicCodeScreen.tscn")
 
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var response_body := JSON.parse(body.get_string_from_ascii())
@@ -58,7 +58,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		notification.text = response_body.result.error.message.capitalize()
 		show_label()
 	elif flag == 0:
-		notification.text = "Registration successful"
+		notification.text = "Registrazione in corso..."
 		show_label()
 		flag = 1
 

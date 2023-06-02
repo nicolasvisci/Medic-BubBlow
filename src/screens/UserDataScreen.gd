@@ -222,3 +222,7 @@ func populate_user_data_game_durations():
 	leaderboard_text_instance.add_color_override("font_color", Color(255,255,255,255))
 	leaderboard_text_instance.text = game_duration_second_mode_3
 	user_data_game_duration_container2.add_child(leaderboard_text_instance)
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://src/screens/LeaderboardScreen.tscn")

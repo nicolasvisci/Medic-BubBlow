@@ -1,23 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/user interface/themes/AlloyInk-lgdWw.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=2]
 [ext_resource path="res://src/screens/UserDataScreen.gd" type="Script" id=3]
 [ext_resource path="res://assets/user interface/themes/main_theme.tres" type="Theme" id=4]
-[ext_resource path="res://assets/user interface/backgrounds/UserData.png" type="Texture" id=5]
-[ext_resource path="res://assets/user interface/bubblebuttons/png/Button_32.png" type="Texture" id=7]
-
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 172, 173 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 172, 173 )
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 172, 173 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 content_margin_left = 50.0
@@ -74,31 +60,15 @@ script = ExtResource( 3 )
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
 expand = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="BackButton" parent="." instance=ExtResource( 2 )]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -457.0
-margin_top = -210.0
-margin_right = -307.0
-margin_bottom = -60.0
-rect_pivot_offset = Vector2( 75, 75 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-next_scene_path = "res://src/screens/LeaderboardScreen.tscn"
-
 [node name="UserDataScroll1" type="ScrollContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.417188
-anchor_right = 0.5
-anchor_bottom = 0.417188
+anchor_left = 0.498437
+anchor_top = 0.12963
+anchor_right = 0.498437
+anchor_bottom = 0.12963
 margin_left = -475.0
 margin_top = -49.0009
 margin_right = 475.0
@@ -247,10 +217,10 @@ __meta__ = {
 }
 
 [node name="UserDataScroll2" type="ScrollContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.491146
+anchor_top = 0.30463
+anchor_right = 0.491146
+anchor_bottom = 0.30463
 margin_left = -450.0
 margin_top = -90.0
 margin_right = 450.0
@@ -347,10 +317,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -450.0
-margin_top = -90.0
-margin_right = 450.0
-margin_bottom = 710.0
+margin_left = -473.0
+margin_top = -298.0
+margin_right = 427.0
+margin_bottom = 502.0
 custom_styles/bg = SubResource( 5 )
 follow_focus = true
 scroll_horizontal_enabled = false
@@ -434,4 +404,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 30
 
+[node name="Button" type="Button" parent="."]
+margin_left = 116.0
+margin_top = 922.0
+margin_right = 322.0
+margin_bottom = 1004.0
+theme = ExtResource( 2 )
+text = "INDIETRO"
+
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
