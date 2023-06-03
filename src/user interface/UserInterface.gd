@@ -16,26 +16,12 @@ var paused: = false setget set_paused
 
 
 func _ready():
-	check_music_button()
-	check_effects_button()
 	set_health()
 	PlayerData.connect("score_updated", self, "update_interface")
 	PlayerData.connect("player_died", self, "_on_PlayerData_player_died")
 	PlayerData.connect("game_resumed", self, "on_game_resumed")
 	set_life_gravity()
 	update_interface()
-
-func check_music_button():
-	if AudioManager.flag_music == 0:
-		music_button.pressed = true
-	elif AudioManager.flag_music == 1:
-		music_button.pressed = false
-
-func check_effects_button():
-	if AudioManager.flag_effects == 0:
-		effects_button.pressed = true
-	elif AudioManager.flag_effects == 1:
-		effects_button.pressed = false
 
 func set_health():
 	health.set_position(health_position)

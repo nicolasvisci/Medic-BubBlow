@@ -259,7 +259,7 @@ custom_styles/separator = SubResource( 6 )
 
 [node name="UserDataDecibelContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
 margin_left = 115.0
-margin_right = 269.0
+margin_right = 268.0
 margin_bottom = 750.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -267,13 +267,13 @@ size_flags_stretch_ratio = 1.5
 custom_constants/separation = 30
 
 [node name="VSeparator2" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 299.0
-margin_right = 303.0
+margin_left = 298.0
+margin_right = 302.0
 margin_bottom = 750.0
 custom_styles/separator = SubResource( 7 )
 
 [node name="UserDataBreathDurationContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 333.0
+margin_left = 332.0
 margin_right = 486.0
 margin_bottom = 750.0
 rect_clip_content = true
@@ -289,7 +289,7 @@ custom_styles/separator = SubResource( 7 )
 
 [node name="UserDataScoreContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
 margin_left = 550.0
-margin_right = 653.0
+margin_right = 652.0
 margin_bottom = 750.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -297,14 +297,14 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 
 [node name="VSeparator4" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 683.0
-margin_right = 687.0
+margin_left = 682.0
+margin_right = 686.0
 margin_bottom = 750.0
 custom_styles/separator = SubResource( 7 )
 
 [node name="UserDataGameDurationContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 717.0
-margin_right = 820.0
+margin_left = 716.0
+margin_right = 819.0
 margin_bottom = 750.0
 rect_clip_content = true
 size_flags_horizontal = 3

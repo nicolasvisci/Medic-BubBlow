@@ -18,10 +18,6 @@ func _on_CreditsButton_pressed():
 	get_tree().change_scene("res://src/screens/CreditsScreen.tscn")
 
 
-func _on_SettingsButton_pressed():
-	get_tree().change_scene("res://src/screens/SettingsScreen.tscn")
-
-
 func _on_LogoutButton_pressed():
 	get_tree().change_scene("res://src/screens/RegistrationScreen.tscn")
 
