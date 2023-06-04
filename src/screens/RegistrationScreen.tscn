@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=1]
 [ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/RegistrationScreen.gd" type="Script" id=3]
 [ext_resource path="res://BubBlow_main_icon.png" type="Texture" id=4]
+[ext_resource path="res://src/screens/prova.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/user interface/themes/AlloyInk-lgdWw.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://src/user interface/QuitButton.tscn" type="PackedScene" id=9]
 
@@ -54,6 +55,7 @@ __meta__ = {
 margin_right = 582.0
 margin_bottom = 138.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 placeholder_text = "NOME"
@@ -63,6 +65,7 @@ margin_top = 153.0
 margin_right = 582.0
 margin_bottom = 292.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 placeholder_text = "COGNOME"
@@ -72,6 +75,7 @@ margin_top = 307.0
 margin_right = 582.0
 margin_bottom = 446.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
 align = 1
 placeholder_text = "Email"
 
@@ -80,6 +84,7 @@ margin_top = 461.0
 margin_right = 582.0
 margin_bottom = 600.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 secret = true
@@ -96,22 +101,25 @@ margin_bottom = -335.0
 custom_constants/separation = 15
 
 [node name="RegisterButton" parent="Menu2" instance=ExtResource( 2 )]
-margin_right = 535.0
+margin_right = 552.0
 margin_bottom = 117.0
 rect_pivot_offset = Vector2( 200, 100 )
+custom_fonts/font = ExtResource( 5 )
 text = "REGISTRATI"
 
 [node name="AlreadyRegisteredButton" parent="Menu2" instance=ExtResource( 2 )]
 margin_top = 132.0
-margin_right = 535.0
+margin_right = 552.0
 margin_bottom = 249.0
 rect_pivot_offset = Vector2( 200, 100 )
+custom_fonts/font = ExtResource( 5 )
 text = "HO UN ACCOUNT"
 
 [node name="QuitButton" parent="Menu2" instance=ExtResource( 9 )]
 margin_top = 264.0
-margin_right = 535.0
+margin_right = 552.0
 margin_bottom = 381.0
+custom_fonts/font = ExtResource( 5 )
 script = null
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
