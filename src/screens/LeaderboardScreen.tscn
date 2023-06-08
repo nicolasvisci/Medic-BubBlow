@@ -71,9 +71,9 @@ margin_bottom = 936.0
 text = "INDIETRO"
 
 [node name="LeaderboardScroll1" type="ScrollContainer" parent="."]
-anchor_left = 0.392708
+anchor_left = 0.405729
 anchor_top = 0.0574074
-anchor_right = 0.392708
+anchor_right = 0.391146
 anchor_bottom = 0.0574074
 margin_left = -466.0
 margin_top = -52.0
@@ -91,7 +91,7 @@ __meta__ = {
 light_mask = 2
 margin_left = 50.0
 margin_top = 30.0
-margin_right = 902.0
+margin_right = 874.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -100,7 +100,7 @@ theme = ExtResource( 2 )
 custom_constants/separation = 5
 
 [node name="LeaderboardPositionTextContainer" type="VBoxContainer" parent="LeaderboardScroll1/LeaderboardContainer"]
-margin_right = 120.0
+margin_right = 116.0
 margin_bottom = 50.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -109,7 +109,7 @@ theme = ExtResource( 2 )
 custom_constants/separation = 10
 
 [node name="PositionText" type="Label" parent="LeaderboardScroll1/LeaderboardContainer/LeaderboardPositionTextContainer"]
-margin_right = 120.0
+margin_right = 116.0
 margin_bottom = 50.0
 custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
 custom_fonts/font = SubResource( 8 )
@@ -120,8 +120,8 @@ __meta__ = {
 }
 
 [node name="LeaderboardNameTextContainer" type="VBoxContainer" parent="LeaderboardScroll1/LeaderboardContainer"]
-margin_left = 125.0
-margin_right = 486.0
+margin_left = 121.0
+margin_right = 470.0
 margin_bottom = 50.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -129,7 +129,7 @@ size_flags_stretch_ratio = 1.5
 custom_constants/separation = 27
 
 [node name="NameText" type="Label" parent="LeaderboardScroll1/LeaderboardContainer/LeaderboardNameTextContainer"]
-margin_right = 361.0
+margin_right = 349.0
 margin_bottom = 50.0
 custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
 custom_fonts/font = SubResource( 8 )
@@ -140,8 +140,8 @@ __meta__ = {
 }
 
 [node name="LeaderboardScoreTextContainer" type="VBoxContainer" parent="LeaderboardScroll1/LeaderboardContainer"]
-margin_left = 491.0
-margin_right = 852.0
+margin_left = 475.0
+margin_right = 824.0
 margin_bottom = 50.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -150,7 +150,7 @@ size_flags_stretch_ratio = 1.5
 custom_constants/separation = 27
 
 [node name="GameScore" type="Label" parent="LeaderboardScroll1/LeaderboardContainer/LeaderboardScoreTextContainer"]
-margin_right = 361.0
+margin_right = 349.0
 margin_bottom = 50.0
 custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
 custom_fonts/font = SubResource( 8 )

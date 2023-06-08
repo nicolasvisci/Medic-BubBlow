@@ -56,7 +56,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
-placeholder_text = "NOME"
+placeholder_text = "Nome"
 
 [node name="SurnameField" type="LineEdit" parent="Menu1"]
 margin_top = 153.0
@@ -66,7 +66,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
-placeholder_text = "COGNOME"
+placeholder_text = "Cognome"
 
 [node name="MailField" type="LineEdit" parent="Menu1"]
 margin_top = 307.0

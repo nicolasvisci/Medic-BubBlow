@@ -17,7 +17,7 @@ var profile := {
 } 
 
 func _ready():
-	Firebase.get_document("users/%s" % Firebase.user_info.id, http)
+	Firebase.get_document("users/medic/%s" % Firebase.user_info.id, http)
 
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
@@ -49,7 +49,7 @@ func _on_SendButton_pressed():
 		profile.type_user = { "stringValue": "medic" }
 		profile.email = { "stringValue": email}
 		profile.medic_code = {"stringValue": medic_code.text}
-		Firebase.update_document("users/%s" % Firebase.user_info.id, profile, http)
+		Firebase.update_document("users/medic/%s" % Firebase.user_info.id, profile, http)
 		information_sent = true
 		yield(get_tree().create_timer(2.0), "timeout")
 		get_tree().change_scene("res://src/screens/MenuScreen.tscn")
