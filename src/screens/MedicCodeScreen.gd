@@ -6,24 +6,16 @@ onready var notification_panel : PanelContainer = $NotificationPanel
 onready var notification : Label = $NotificationPanel/Notification
 onready var send_button : Button = $Menu/SendButton
 
-var email = ""
 var information_sent := false
 var profile := {
 	"name": {},
 	"surname": {},
 	"email": {},
-	"type_user": {},
 	"medic_code": {}
 } 
 
-func _ready():
-	Firebase.get_document("medics/%s" % Firebase.user_info.id, http)
-
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
-	email = result_body.fields.email.stringValue
-	PlayerData.name_user = result_body.fields.name.stringValue
-	PlayerData.surname_user = result_body.fields.surname.stringValue
 	match response_code:
 		404:
 			notification.text = "Codice non valido."
@@ -41,15 +33,12 @@ func _on_SendButton_pressed():
 		show_label()
 		return
 	if medic_code.text == "12345678":
-		PlayerData.user_type = "medic"
-		PlayerData.email = email
 		PlayerData.medic_code = medic_code.text
 		profile.name = {"stringValue": PlayerData.name_user}
 		profile.surname = {"stringValue": PlayerData.surname_user}
-		profile.type_user = { "stringValue": "medic" }
-		profile.email = { "stringValue": email}
-		profile.medic_code = {"stringValue": medic_code.text}
-		Firebase.update_document("medics/%s" % Firebase.user_info.id, profile, http)
+		profile.email = { "stringValue": PlayerData.email}
+		profile.medic_code = {"stringValue": PlayerData.medic_code}
+		Firebase.save_document("medics?documentId=%s" % Firebase.user_info.id, profile, http)
 		information_sent = true
 		yield(get_tree().create_timer(2.0), "timeout")
 		get_tree().change_scene("res://src/screens/MenuScreen.tscn")

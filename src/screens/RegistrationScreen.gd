@@ -45,10 +45,10 @@ func _on_RegisterButton_pressed() -> void:
 		return
 	Firebase.register(email_field.text, password_field.text, http)
 	yield(get_tree().create_timer(3.5), "timeout")
-	profile.name = { "stringValue": name_field.text}
-	profile.surname = { "stringValue": surname_field.text }
-	profile.email = {"stringValue": email_field.text}
-	Firebase.save_document("medics?documentId=%s" % Firebase.user_info.id, profile, http)
+	PlayerData.name_user = name_field.text
+	PlayerData.surname_user = surname_field.text
+	PlayerData.email = email_field.text
+	
 	yield(get_tree().create_timer(2.0), "timeout")
 	get_tree().change_scene("res://src/screens/MedicCodeScreen.tscn")
 

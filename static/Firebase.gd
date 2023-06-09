@@ -8,13 +8,7 @@ const LOGIN_URL := "https://www.googleapis.com/identitytoolkit/v3/relyingparty/v
 const FIRESTORE_URL := "https://firestore.googleapis.com/v1/projects/%s/databases/(default)/documents/" % PROJECT_ID
 
 var user_info := {}
-
-onready var email = ""
-var new_profile := true
 var information_sent := false
-var profile := {
-	"email": {}
-}
 
 
 func _get_user_info(result: Array) -> Dictionary:
