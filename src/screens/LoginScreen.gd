@@ -27,7 +27,7 @@ func _on_LoginButton_pressed() -> void:
 		return
 	Firebase.login(email_field.text, password_field.text, http)
 	yield(get_tree().create_timer(2.0), "timeout")
-	Firebase.get_document("users/medic/%s" % Firebase.user_info.id, http)
+	Firebase.get_document("medics/%s" % Firebase.user_info.id, http)
 
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var response_body := JSON.parse(body.get_string_from_ascii())

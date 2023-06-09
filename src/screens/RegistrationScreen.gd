@@ -48,7 +48,7 @@ func _on_RegisterButton_pressed() -> void:
 	profile.name = { "stringValue": name_field.text}
 	profile.surname = { "stringValue": surname_field.text }
 	profile.email = {"stringValue": email_field.text}
-	Firebase.update_document("users/medic/%s" % Firebase.user_info.id, profile, http)
+	Firebase.save_document("medics?documentId=%s" % Firebase.user_info.id, profile, http)
 	yield(get_tree().create_timer(2.0), "timeout")
 	get_tree().change_scene("res://src/screens/MedicCodeScreen.tscn")
 

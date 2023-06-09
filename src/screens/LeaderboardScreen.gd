@@ -35,11 +35,11 @@ var highscore_second_mode_3 = 0
 
 func _ready():
 	remove_leaderboard_scrollbar()
-	Firebase.get_document("users/%s" % PlayerData.user_id_1, http)
+	Firebase.get_document("patients/%s" % PlayerData.user_id_1, http)
 	yield(get_tree().create_timer(1.0), "timeout")
-	Firebase.get_document("users/%s" % PlayerData.user_id_2, http)
+	Firebase.get_document("patients/%s" % PlayerData.user_id_2, http)
 	yield(get_tree().create_timer(1.0), "timeout")
-	Firebase.get_document("users/%s" % PlayerData.user_id_3, http)
+	Firebase.get_document("patients/%s" % PlayerData.user_id_3, http)
 	yield(get_tree().create_timer(1.0), "timeout")
 	populate_leaderboard_positions()
 	populate_leaderboard_names()

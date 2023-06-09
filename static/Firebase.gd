@@ -41,9 +41,6 @@ func register(email: String, password: String, http: HTTPRequest) -> void:
 	var result := yield(http, "request_completed") as Array
 	if result[1] == 200:
 		user_info = _get_user_info(result)
-	profile.email = { "stringValue": email }
-	print(profile)
-	Firebase.update_document("users/%s" % Firebase.user_info.id, profile, http)
 	information_sent = true
 
 
