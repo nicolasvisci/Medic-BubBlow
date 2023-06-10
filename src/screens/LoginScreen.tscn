@@ -26,13 +26,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -771.0
-margin_top = -160.0
-margin_right = -271.0
-margin_bottom = 140.0
+margin_top = -340.0
+margin_right = -264.0
+margin_bottom = -40.0
 custom_constants/separation = 15
 
 [node name="MailField" type="LineEdit" parent="Menu1"]
-margin_right = 500.0
+margin_right = 507.0
 margin_bottom = 142.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 6 )
@@ -41,7 +41,7 @@ placeholder_text = "Email"
 
 [node name="PasswordField" type="LineEdit" parent="Menu1"]
 margin_top = 157.0
-margin_right = 500.0
+margin_right = 507.0
 margin_bottom = 300.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 6 )
@@ -56,9 +56,9 @@ anchor_top = 0.530556
 anchor_right = 0.75625
 anchor_bottom = 0.530556
 margin_left = -214.0
-margin_top = -300.0
-margin_right = 214.0
-margin_bottom = 300.0
+margin_top = -373.0
+margin_right = 293.0
+margin_bottom = 227.0
 custom_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": true

@@ -21,7 +21,7 @@ func set_timer():
 
 func _on_LoginButton_pressed() -> void:
 	if email_field.text.empty() or password_field.text.empty():
-		notification.text = "Please, insert email and password"
+		notification.text = "Inserisci email e password"
 		show_label()
 		return
 	Firebase.login(email_field.text, password_field.text, http)
@@ -38,7 +38,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		show_label()
 	else:
 		if (flag == 1):
-			notification.text = "Login successful"
+			notification.text = "Login in corso..."
 			show_label()
 			yield(get_tree().create_timer(2.0), "timeout")
 			get_tree().change_scene("res://src/screens/MenuScreen.tscn")

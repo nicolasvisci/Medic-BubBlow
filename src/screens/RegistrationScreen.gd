@@ -5,6 +5,7 @@ onready var name_field: LineEdit = $Menu1/NameField
 onready var surname_field: LineEdit = $Menu1/SurnameField
 onready var email_field : LineEdit = $Menu1/MailField
 onready var password_field : LineEdit = $Menu1/PasswordField
+onready var medicCode_field : LineEdit = $Menu1/MedicCodeField
 onready var notification_panel : PanelContainer = $NotificationPanel
 onready var notification : Label = $NotificationPanel/Notification
 
@@ -14,7 +15,8 @@ var hide_delay = 4
 var profile := {
 	"name": {},
 	"surname": {},
-	"email": {}
+	"email": {},
+	"medic_code": {}
 } 
 
 func _ready():
@@ -28,27 +30,48 @@ func set_timer():
 
 func _on_RegisterButton_pressed() -> void:
 	if name_field.text.empty():
-		notification.text = "Insert name"
+		notification.text = "Inserisci nome"
 		show_label()
 		return
 	if surname_field.text.empty():
-		notification.text = "Insert surname"
+		notification.text = "Inserisci cognome"
 		show_label()
 		return
 	if email_field.text.empty():
-		notification.text = "Insert email"
+		notification.text = "Inserisci email"
 		show_label()
 		return
 	if password_field.text.empty():
-		notification.text = "Insert password"
+		notification.text = "Inserisci password"
 		show_label()
 		return
-	Firebase.register(email_field.text, password_field.text, http)
-	yield(get_tree().create_timer(3.5), "timeout")
-	PlayerData.name_user = name_field.text
-	PlayerData.surname_user = surname_field.text
-	PlayerData.email = email_field.text
-	
+	if medicCode_field.text.empty():
+		notification.text = "Inserisci codice medico"
+		show_label()
+		return
+	elif medicCode_field.text == "12345678":
+		PlayerData.name_user = name_field.text
+		PlayerData.surname_user = surname_field.text
+		PlayerData.email = email_field.text
+		PlayerData.medic_code = medicCode_field.text
+		Firebase.register(email_field.text, password_field.text, http)
+		yield(get_tree().create_timer(3.5), "timeout")
+		profile.name = {"stringValue": PlayerData.name_user}
+		profile.surname = {"stringValue": PlayerData.surname_user}
+		profile.email = { "stringValue": PlayerData.email}
+		profile.medic_code = {"stringValue": PlayerData.medic_code}
+		Firebase.save_document("medics?documentId=%s" % Firebase.user_info.id, profile, http)
+		notification.text = "Registrazione avvenuta con successo"
+		show_label()
+		yield(get_tree().create_timer(2.0), "timeout")
+		get_tree().change_scene("res://src/screens/MenuScreen.tscn")
+		
+	else:
+		notification.text = "Codice Medico errato riprovare!"
+		show_label()
+		yield(get_tree().create_timer(2.0), "timeout")
+		get_tree().change_scene("res://src/screens/RegistrationScreen.tscn")
+		
 	yield(get_tree().create_timer(2.0), "timeout")
 	get_tree().change_scene("res://src/screens/MedicCodeScreen.tscn")
 
