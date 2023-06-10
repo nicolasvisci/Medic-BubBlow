@@ -1,27 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=1]
 [ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/RegistrationScreen.gd" type="Script" id=3]
-[ext_resource path="res://sfondo-bianco-1920x1080.jpg" type="Texture" id=4]
 [ext_resource path="res://src/screens/prova.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/user interface/themes/AlloyInk-lgdWw.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/user interface/themes/DarkTheme/StyleBox/Panel.stylebox" type="StyleBox" id=6]
 [ext_resource path="res://src/user interface/QuitButton.tscn" type="PackedScene" id=9]
-
-[sub_resource type="StyleBoxFlat" id=2]
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-expand_margin_left = 10.0
-expand_margin_right = 10.0
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="DynamicFont" id=1]
-size = 40
-outline_color = Color( 1, 0.8, 0, 1 )
-font_data = ExtResource( 8 )
 
 [node name="RegistrationScreen" type="Control"]
 anchor_right = 1.0
@@ -32,7 +16,6 @@ script = ExtResource( 3 )
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1919.0
 margin_bottom = 1080.0
-texture = ExtResource( 4 )
 expand = true
 
 [node name="Menu1" type="VBoxContainer" parent="."]
@@ -130,23 +113,24 @@ anchor_top = 0.91875
 anchor_right = 0.5
 anchor_bottom = 0.91875
 margin_left = -250.0
-margin_top = -27.0
+margin_top = -92.25
 margin_right = 250.0
-margin_bottom = 27.0
+margin_bottom = -8.25
 theme = ExtResource( 1 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Notification" type="Label" parent="NotificationPanel"]
-margin_top = 7.0
-margin_right = 500.0
-margin_bottom = 47.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 498.0
+margin_bottom = 82.0
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 0.8, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
 align = 1
 autowrap = true
 __meta__ = {

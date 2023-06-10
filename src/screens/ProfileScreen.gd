@@ -9,8 +9,6 @@ func _ready() -> void:
 	set_profile()
 
 func set_profile():
-	item_list.remove_item(3)
-	item_list.remove_item(3)
 	item_list.set_item_text(0, "Nome: " + PlayerData.name_user)
 	item_list.set_item_text(1, "Cognome: " + PlayerData.surname_user)
 	item_list.set_item_text(2, "Email: " + PlayerData.email)
