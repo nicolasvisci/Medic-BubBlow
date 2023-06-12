@@ -83,7 +83,7 @@ fixed_icon_size = Vector2( 50, 50 )
 [node name="BackButton" type="Button" parent="."]
 margin_left = 816.0
 margin_top = 867.0
-margin_right = 1187.0
+margin_right = 1216.0
 margin_bottom = 1000.0
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 2 )
