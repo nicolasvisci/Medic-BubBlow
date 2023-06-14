@@ -7,7 +7,7 @@ onready var leaderboard_button = $LeaderboardButton
 
 
 func _on_DatiPazientiButton_pressed():
-	get_tree().change_scene("res://src/screens/LeaderboardScreen.tscn")
+	get_tree().change_scene("res://src/screens/PeopleScreen.tscn")
 
 
 func _on_QuitButton_pressed():
