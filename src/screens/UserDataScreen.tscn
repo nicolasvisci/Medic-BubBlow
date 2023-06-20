@@ -1,60 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/user interface/themes/AlloyInk-lgdWw.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/screens/prova.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=2]
 [ext_resource path="res://src/screens/UserDataScreen.gd" type="Script" id=3]
-[ext_resource path="res://assets/user interface/themes/main_theme.tres" type="Theme" id=4]
-
-[sub_resource type="StyleBoxFlat" id=9]
-content_margin_left = 50.0
-content_margin_right = 30.0
-content_margin_top = 30.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.219608, 0.843137, 0.823529, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=10]
-size = 35
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxLine" id=6]
-color = Color( 0.188235, 0.713726, 0.698039, 1 )
-thickness = 10
-vertical = true
-
-[sub_resource type="StyleBoxFlat" id=5]
-content_margin_left = 50.0
-content_margin_right = 30.0
-content_margin_top = 30.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.219608, 0.843137, 0.823529, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxLine" id=7]
-color = Color( 0.188235, 0.713726, 0.698039, 1 )
-thickness = 10
-vertical = true
+[ext_resource path="res://assets/user interface/themes/secondary_font.tres" type="DynamicFont" id=5]
 
 [node name="UserDataScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -62,355 +15,239 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="Name" type="LineEdit" parent="."]
+margin_left = 508.0
+margin_top = 15.0
+margin_right = 710.0
+margin_bottom = 105.0
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 1, 0.996078, 0.996078, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+editable = false
+expand_to_text_length = true
 
-[node name="UserDataScroll1" type="ScrollContainer" parent="."]
-anchor_left = 0.498437
-anchor_top = 0.12963
-anchor_right = 0.498437
-anchor_bottom = 0.12963
-margin_left = -475.0
-margin_top = -49.0009
-margin_right = 475.0
-margin_bottom = 50.9991
-custom_styles/bg = SubResource( 9 )
-follow_focus = true
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="Surname" type="LineEdit" parent="."]
+margin_left = 976.0
+margin_top = 23.0
+margin_right = 1178.0
+margin_bottom = 113.0
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+editable = false
+expand_to_text_length = true
 
-[node name="UserDataContainer" type="HBoxContainer" parent="UserDataScroll1"]
-light_mask = 2
-margin_left = 50.0
-margin_top = 30.0
-margin_right = 920.0
-margin_bottom = 80.0
+[node name="HBoxContainer1" type="HBoxContainer" parent="."]
+margin_left = 1.0
+margin_top = 103.0
+margin_right = 1914.0
+margin_bottom = 189.0
+
+[node name="Games_1" type="Label" parent="HBoxContainer1"]
+margin_top = 22.0
+margin_right = 635.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
-custom_constants/separation = 5
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Partite giocate mod. 1"
 
-[node name="UserDataGameTextContainer" type="VBoxContainer" parent="UserDataScroll1/UserDataContainer"]
-margin_right = 88.0
-margin_bottom = 50.0
-rect_clip_content = true
+[node name="Games_2" type="Label" parent="HBoxContainer1"]
+margin_left = 639.0
+margin_top = 22.0
+margin_right = 1274.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-custom_constants/separation = 10
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Partite giocate mod. 2"
 
-[node name="GameText" type="Label" parent="UserDataScroll1/UserDataContainer/UserDataGameTextContainer"]
-margin_right = 88.0
-margin_bottom = 35.0
-custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "NUM."
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="VSeparator" type="VSeparator" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 93.0
-margin_right = 108.0
-margin_bottom = 50.0
-custom_constants/separation = 15
-custom_styles/separator = SubResource( 6 )
-
-[node name="UserDataDecibelTextContainer" type="VBoxContainer" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 113.0
-margin_right = 311.0
-margin_bottom = 50.0
-rect_clip_content = true
+[node name="dec_avg" type="Label" parent="HBoxContainer1"]
+margin_left = 1278.0
+margin_top = 22.0
+margin_right = 1913.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-custom_constants/separation = 27
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Media Decibel"
 
-[node name="DecibelText" type="Label" parent="UserDataScroll1/UserDataContainer/UserDataDecibelTextContainer"]
-margin_right = 198.0
-margin_bottom = 35.0
-custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "DECIBEL"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = 210.0
+margin_right = 1916.0
+margin_bottom = 296.0
+theme = ExtResource( 2 )
 
-[node name="VSeparator2" type="VSeparator" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 316.0
-margin_right = 331.0
-margin_bottom = 50.0
-custom_constants/separation = 15
-custom_styles/separator = SubResource( 6 )
+[node name="Games_1" type="LineEdit" parent="HBoxContainer2"]
+margin_right = 106.0
+margin_bottom = 86.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
 
-[node name="UserDataBreathDurationTextContainer" type="VBoxContainer" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 336.0
-margin_right = 555.0
-margin_bottom = 50.0
-rect_clip_content = true
+[node name="Games_2" type="LineEdit" parent="HBoxContainer2"]
+margin_left = 639.0
+margin_right = 745.0
+margin_bottom = 86.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
+
+[node name="dec_avg" type="LineEdit" parent="HBoxContainer2"]
+margin_left = 1278.0
+margin_right = 1384.0
+margin_bottom = 86.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = 302.0
+margin_right = 1915.0
+margin_bottom = 388.0
+
+[node name="High_1" type="Label" parent="HBoxContainer3"]
+margin_top = 22.0
+margin_right = 635.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-custom_constants/separation = 27
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Miglior punteggio mod. 1"
 
-[node name="BreathDurationText" type="Label" parent="UserDataScroll1/UserDataContainer/UserDataBreathDurationTextContainer"]
-margin_right = 219.0
-margin_bottom = 35.0
-custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "ESPIRAZIONE"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="VSeparator3" type="VSeparator" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 560.0
-margin_right = 575.0
-margin_bottom = 50.0
-custom_constants/separation = 15
-custom_styles/separator = SubResource( 6 )
-
-[node name="UserDataScoreTextContainer" type="VBoxContainer" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 580.0
-margin_right = 712.0
-margin_bottom = 50.0
-rect_clip_content = true
+[node name="High_2" type="Label" parent="HBoxContainer3"]
+margin_left = 639.0
+margin_top = 22.0
+margin_right = 1274.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 27
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Miglior punteggio mod. 2"
 
-[node name="ScoreText" type="Label" parent="UserDataScroll1/UserDataContainer/UserDataScoreTextContainer"]
-margin_right = 132.0
-margin_bottom = 35.0
-custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "PUNT."
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="VSeparator4" type="VSeparator" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 717.0
-margin_right = 732.0
-margin_bottom = 50.0
-custom_constants/separation = 15
-custom_styles/separator = SubResource( 6 )
-
-[node name="UserDataDurationTextContainer" type="VBoxContainer" parent="UserDataScroll1/UserDataContainer"]
-margin_left = 737.0
-margin_right = 870.0
-margin_bottom = 50.0
-rect_clip_content = true
+[node name="Breath" type="Label" parent="HBoxContainer3"]
+margin_left = 1278.0
+margin_top = 22.0
+margin_right = 1913.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 27
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Durata respiro"
 
-[node name="DurationText" type="Label" parent="UserDataScroll1/UserDataContainer/UserDataDurationTextContainer"]
-margin_right = 133.0
-margin_bottom = 35.0
-custom_colors/font_color = Color( 0.188235, 0.713726, 0.698039, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "TEMPO"
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+margin_left = 3.0
+margin_top = 385.0
+margin_right = 1917.0
+margin_bottom = 475.0
+theme = ExtResource( 2 )
 
-[node name="UserDataScroll2" type="ScrollContainer" parent="."]
-anchor_left = 0.491146
-anchor_top = 0.30463
-anchor_right = 0.491146
-anchor_bottom = 0.30463
-margin_left = -450.0
-margin_top = -90.0
-margin_right = 450.0
-margin_bottom = 710.0
-custom_styles/bg = SubResource( 5 )
-follow_focus = true
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="High_1" type="LineEdit" parent="HBoxContainer4"]
+margin_right = 106.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
 
-[node name="UserDataContainer" type="HBoxContainer" parent="UserDataScroll2"]
-light_mask = 2
-margin_left = 50.0
-margin_top = 30.0
-margin_right = 870.0
-margin_bottom = 780.0
+[node name="High_2" type="LineEdit" parent="HBoxContainer4"]
+margin_left = 639.0
+margin_right = 745.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
+
+[node name="Breath" type="LineEdit" parent="HBoxContainer4"]
+margin_left = 1278.0
+margin_right = 1384.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 497.0
+margin_right = 1917.0
+margin_bottom = 587.0
+
+[node name="Duration" type="Label" parent="HBoxContainer5"]
+margin_top = 24.0
+margin_right = 954.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
-custom_constants/separation = 30
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Durata partita"
 
-[node name="UserDataGameContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_right = 51.0
-margin_bottom = 750.0
-rect_clip_content = true
+[node name="Score" type="Label" parent="HBoxContainer5"]
+margin_left = 958.0
+margin_top = 24.0
+margin_right = 1912.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-custom_constants/separation = 30
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Punteggio partita"
 
-[node name="VSeparator" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 81.0
-margin_right = 85.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 6 )
-
-[node name="UserDataDecibelContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 115.0
-margin_right = 268.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-custom_constants/separation = 30
-
-[node name="VSeparator2" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 298.0
-margin_right = 302.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataBreathDurationContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 332.0
-margin_right = 486.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-custom_constants/separation = 30
-
-[node name="VSeparator3" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 516.0
-margin_right = 520.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataScoreContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 550.0
-margin_right = 652.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 30
-
-[node name="VSeparator4" type="VSeparator" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 682.0
-margin_right = 686.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataGameDurationContainer" type="VBoxContainer" parent="UserDataScroll2/UserDataContainer"]
-margin_left = 716.0
-margin_right = 819.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 30
-
-[node name="UserDataScroll3" type="ScrollContainer" parent="."]
+[node name="Breath" type="Label" parent="HBoxContainer5"]
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -473.0
-margin_top = -298.0
-margin_right = 427.0
-margin_bottom = 502.0
-custom_styles/bg = SubResource( 5 )
-follow_focus = true
-scroll_horizontal_enabled = false
-
-[node name="UserDataContainer" type="HBoxContainer" parent="UserDataScroll3"]
-light_mask = 2
-margin_left = 50.0
-margin_top = 30.0
-margin_right = 870.0
-margin_bottom = 780.0
+margin_left = 1277.0
+margin_top = 24.0
+margin_right = 1912.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
-custom_constants/separation = 30
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "Durata respiro"
 
-[node name="UserDataGameContainer" type="VBoxContainer" parent="UserDataScroll3/UserDataContainer"]
-margin_right = 47.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-custom_constants/separation = 30
+[node name="HBoxContainer6" type="HBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 599.0
+margin_right = 1918.0
+margin_bottom = 689.0
+theme = ExtResource( 2 )
 
-[node name="VSeparator" type="VSeparator" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 77.0
-margin_right = 81.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 6 )
+[node name="Duration" type="LineEdit" parent="HBoxContainer6"]
+margin_right = 106.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
 
-[node name="UserDataDecibelContainer" type="VBoxContainer" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 111.0
-margin_right = 299.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-custom_constants/separation = 30
+[node name="Score" type="LineEdit" parent="HBoxContainer6"]
+margin_left = 959.0
+margin_right = 1065.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
 
-[node name="VSeparator2" type="VSeparator" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 329.0
-margin_right = 333.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataBreathDurationContainer" type="VBoxContainer" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 363.0
-margin_right = 504.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-custom_constants/separation = 30
-
-[node name="VSeparator3" type="VSeparator" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 534.0
-margin_right = 538.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataScoreContainer" type="VBoxContainer" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 568.0
-margin_right = 662.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 30
-
-[node name="VSeparator4" type="VSeparator" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 692.0
-margin_right = 696.0
-margin_bottom = 750.0
-custom_styles/separator = SubResource( 7 )
-
-[node name="UserDataGameDurationContainer" type="VBoxContainer" parent="UserDataScroll3/UserDataContainer"]
-margin_left = 726.0
-margin_right = 820.0
-margin_bottom = 750.0
-rect_clip_content = true
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 30
+[node name="Breath" type="LineEdit" parent="HBoxContainer6"]
+visible = false
+margin_left = 1278.0
+margin_right = 1384.0
+margin_bottom = 90.0
+size_flags_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+expand_to_text_length = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 116.0
-margin_top = 922.0
-margin_right = 322.0
-margin_bottom = 1004.0
+margin_left = 740.0
+margin_top = 906.0
+margin_right = 1049.0
+margin_bottom = 988.0
 theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "INDIETRO"
 
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

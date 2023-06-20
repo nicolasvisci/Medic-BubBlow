@@ -56,15 +56,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
 
+[node name="Label" type="Label" parent="."]
+margin_left = 830.0
+margin_top = 48.0
+margin_right = 1040.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 2 )
+text = "Profilo"
+uppercase = true
+
 [node name="ItemList" type="ItemList" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -639.0
-margin_top = -483.0
-margin_right = 647.0
-margin_bottom = 288.0
+margin_left = -600.0
+margin_top = -340.0
+margin_right = 600.0
+margin_bottom = 160.0
 theme = ExtResource( 1 )
 custom_colors/guide_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
@@ -81,13 +90,20 @@ fixed_icon_size = Vector2( 50, 50 )
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="BackButton" type="Button" parent="."]
-margin_left = 816.0
-margin_top = 867.0
-margin_right = 1216.0
-margin_bottom = 1000.0
+anchor_left = 0.5
+anchor_top = 0.88
+anchor_right = 0.5
+anchor_bottom = 0.88
+margin_left = -200.0
+margin_top = -100.4
+margin_right = 200.0
+margin_bottom = 99.5999
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "INDIETRO"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

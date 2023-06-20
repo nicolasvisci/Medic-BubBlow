@@ -2,7 +2,6 @@ extends Control
 
 onready var http : HTTPRequest = $HTTPRequest
 onready var item_list = $ItemList
-onready var email : LineEdit = $ItemList/LineEdit
 
 
 func _ready() -> void:

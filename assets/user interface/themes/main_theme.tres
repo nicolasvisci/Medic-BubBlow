@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/user interface/themes/buttons_normal.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/user interface/bubblebuttons/png/Button_42.png" type="Texture" id=3]
 [ext_resource path="res://assets/user interface/bubblebuttons/png/Button_59.png" type="Texture" id=4]
-[ext_resource path="res://assets/user interface/themes/secondary_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://src/screens/prova.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/user interface/bubblebuttons/png/Button_07.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=17]

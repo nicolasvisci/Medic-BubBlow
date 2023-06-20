@@ -5,15 +5,19 @@ signal life_counter_updated
 signal player_died
 signal game_resumed
 
+var patient_id_1 := "ON2MVg91NlMjODREg3QvIzV652k1"
+var patient_id_2 := "l3DCROBWP1U0WD9rfDrRlwZ9qri2"
+var patient_id_3 := "xm1EadLn2hMdBnMCfRlqFm6kvF82"
 var game_mode := 0
 var name_user := ""
 var surname_user := ""
 var email := ""
 var medic_code := ""
+var total_games := 0
+var games_first_mode_count := 0
+var games_second_mode_count := 0
 var highscore_first_mode := 0
 var highscore_second_mode := 0
-var games_first_mode := 0
-var games_second_mode := 0
 var score: = 0 setget set_score
 var life_counter := 0 setget set_life_counter
 var deaths: = 0 setget set_deaths
@@ -24,34 +28,13 @@ var breath_duration_seconds := 0
 var breath_duration_minutes := 0
 var game_duration_seconds := 0
 var game_duration_minutes := 0
-var last_score_first_mode_1 := 0
-var last_score_first_mode_2 := 0
-var last_score_first_mode_3 := 0
-var last_score_second_mode_1 := 0
-var last_score_second_mode_2 := 0
-var last_score_second_mode_3 := 0
-var decibel_avg_first_mode_1 := 0.0
-var decibel_avg_second_mode_1 := 0.0
-var game_duration_first_mode_1 := ""
-var game_duration_second_mode_1 := ""
-var breath_duration_first_mode_1 := ""
-var breath_duration_second_mode_1 := ""
-var decibel_avg_first_mode_2 := 0.0
-var decibel_avg_second_mode_2 := 0.0
-var game_duration_first_mode_2 := ""
-var game_duration_second_mode_2 := ""
-var breath_duration_first_mode_2 := ""
-var breath_duration_second_mode_2 := ""
-var decibel_avg_first_mode_3 := 0.0
-var decibel_avg_second_mode_3 := 0.0
-var game_duration_first_mode_3 := ""
-var game_duration_second_mode_3 := ""
-var breath_duration_first_mode_3 := ""
-var breath_duration_second_mode_3 := ""
-var user_id_1 := "M3h6igfKBCZhZYHSAhGPTQ7uqyi1"
-var user_id_2 := "M3h6igfKBCZhZYHSAhGPTQ7uqyi1"
-var user_id_3 := "M3h6igfKBCZhZYHSAhGPTQ7uqyi1"
-var user_flag := 0
+var last_score_first_mode := 0
+var last_score_second_mode := 0
+var decibel_avg:= 0.0
+var game_duration:= ""
+var breath_duration:= ""
+var user_flag := 1
+var get_flag := 0
 
 
 func reset():
@@ -60,12 +43,7 @@ func reset():
 	deaths = 0
 	player_flying = false
 	invincible = false
-	decibel_avg_first_mode_1 = 0.0
-	decibel_avg_second_mode_1 = 0.0
-	decibel_avg_first_mode_2 = 0.0
-	decibel_avg_second_mode_2 = 0.0
-	decibel_avg_first_mode_3 = 0.0
-	decibel_avg_second_mode_3 = 0.0
+	decibel_avg = 0.0
 	breathe_counter = 0.0
 	breath_duration_seconds = 0
 	breath_duration_minutes = 0
