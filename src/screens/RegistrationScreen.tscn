@@ -45,7 +45,7 @@ __meta__ = {
 
 [node name="NameField" type="LineEdit" parent="Menu1"]
 margin_right = 582.0
-margin_bottom = 112.0
+margin_bottom = 108.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
@@ -53,9 +53,9 @@ max_length = 10
 placeholder_text = "Nome"
 
 [node name="SurnameField" type="LineEdit" parent="Menu1"]
-margin_top = 127.0
+margin_top = 123.0
 margin_right = 582.0
-margin_bottom = 240.0
+margin_bottom = 231.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
@@ -63,18 +63,18 @@ max_length = 10
 placeholder_text = "Cognome"
 
 [node name="MailField" type="LineEdit" parent="Menu1"]
-margin_top = 255.0
+margin_top = 246.0
 margin_right = 582.0
-margin_bottom = 367.0
+margin_bottom = 354.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
 placeholder_text = "Email"
 
 [node name="PasswordField" type="LineEdit" parent="Menu1"]
-margin_top = 382.0
+margin_top = 369.0
 margin_right = 582.0
-margin_bottom = 495.0
+margin_bottom = 477.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
@@ -83,9 +83,10 @@ secret = true
 placeholder_text = "Password"
 
 [node name="MedicCodeField" type="LineEdit" parent="Menu1"]
-margin_top = 510.0
+margin_top = 492.0
 margin_right = 582.0
 margin_bottom = 600.0
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 align = 1
 secret = true
@@ -149,7 +150,7 @@ margin_right = 498.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
-custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
 align = 1
 autowrap = true

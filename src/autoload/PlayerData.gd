@@ -35,6 +35,9 @@ var game_duration:= ""
 var breath_duration:= ""
 var user_flag := 1
 var get_flag := 0
+var first_mode := false
+var second_mode := false
+var third_mode := false
 
 
 func reset():

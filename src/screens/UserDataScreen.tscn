@@ -49,14 +49,14 @@ margin_bottom = 189.0
 
 [node name="Games_1" type="Label" parent="HBoxContainer1"]
 margin_top = 22.0
-margin_right = 635.0
+margin_right = 954.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-text = "Partite giocate mod. 1"
 
 [node name="Games_2" type="Label" parent="HBoxContainer1"]
+visible = false
 margin_left = 639.0
 margin_top = 22.0
 margin_right = 1274.0
@@ -67,7 +67,7 @@ custom_fonts/font = ExtResource( 5 )
 text = "Partite giocate mod. 2"
 
 [node name="dec_avg" type="Label" parent="HBoxContainer1"]
-margin_left = 1278.0
+margin_left = 958.0
 margin_top = 22.0
 margin_right = 1913.0
 margin_bottom = 64.0
@@ -91,6 +91,7 @@ custom_fonts/font = ExtResource( 5 )
 expand_to_text_length = true
 
 [node name="Games_2" type="LineEdit" parent="HBoxContainer2"]
+visible = false
 margin_left = 639.0
 margin_right = 745.0
 margin_bottom = 86.0
@@ -99,8 +100,8 @@ custom_fonts/font = ExtResource( 5 )
 expand_to_text_length = true
 
 [node name="dec_avg" type="LineEdit" parent="HBoxContainer2"]
-margin_left = 1278.0
-margin_right = 1384.0
+margin_left = 959.0
+margin_right = 1065.0
 margin_bottom = 86.0
 size_flags_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
@@ -114,14 +115,14 @@ margin_bottom = 388.0
 
 [node name="High_1" type="Label" parent="HBoxContainer3"]
 margin_top = 22.0
-margin_right = 635.0
+margin_right = 954.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-text = "Miglior punteggio mod. 1"
 
 [node name="High_2" type="Label" parent="HBoxContainer3"]
+visible = false
 margin_left = 639.0
 margin_top = 22.0
 margin_right = 1274.0
@@ -132,7 +133,7 @@ custom_fonts/font = ExtResource( 5 )
 text = "Miglior punteggio mod. 2"
 
 [node name="Breath" type="Label" parent="HBoxContainer3"]
-margin_left = 1278.0
+margin_left = 958.0
 margin_top = 22.0
 margin_right = 1913.0
 margin_bottom = 64.0
@@ -156,6 +157,7 @@ custom_fonts/font = ExtResource( 5 )
 expand_to_text_length = true
 
 [node name="High_2" type="LineEdit" parent="HBoxContainer4"]
+visible = false
 margin_left = 639.0
 margin_right = 745.0
 margin_bottom = 90.0
@@ -164,8 +166,8 @@ custom_fonts/font = ExtResource( 5 )
 expand_to_text_length = true
 
 [node name="Breath" type="LineEdit" parent="HBoxContainer4"]
-margin_left = 1278.0
-margin_right = 1384.0
+margin_left = 959.0
+margin_right = 1065.0
 margin_bottom = 90.0
 size_flags_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
@@ -239,10 +241,14 @@ custom_fonts/font = ExtResource( 5 )
 expand_to_text_length = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 740.0
-margin_top = 906.0
-margin_right = 1049.0
-margin_bottom = 988.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -154.5
+margin_top = -180.0
+margin_right = 154.5
+margin_bottom = -98.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 text = "INDIETRO"

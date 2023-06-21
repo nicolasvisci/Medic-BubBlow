@@ -41,25 +41,26 @@ custom_constants/separation = 3
 
 [node name="DatiPazientiButton" type="Button" parent="Menu"]
 margin_right = 648.0
-margin_bottom = 82.0
+margin_bottom = 98.0
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 text = "DATI PAZIENTI"
 
-[node name="CreditsButton" parent="Menu" instance=ExtResource( 2 )]
-margin_top = 85.0
+[node name="ProfileButton" type="Button" parent="Menu"]
+margin_top = 101.0
 margin_right = 648.0
-margin_bottom = 191.0
-rect_pivot_offset = Vector2( 200, 100 )
+margin_bottom = 199.0
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
-text = "CREDITI"
+text = "PROFILO"
 
-[node name="QuitButton" parent="Menu" instance=ExtResource( 1 )]
-margin_top = 194.0
+[node name="CreditsButton" parent="Menu" instance=ExtResource( 2 )]
+margin_top = 202.0
 margin_right = 648.0
 margin_bottom = 300.0
 rect_pivot_offset = Vector2( 200, 100 )
 custom_fonts/font = ExtResource( 5 )
-script = null
+text = "CREDITI"
 
 [node name="LogoutButton" type="Button" parent="."]
 margin_left = 251.0
@@ -69,19 +70,20 @@ margin_bottom = 970.0
 custom_fonts/font = ExtResource( 5 )
 text = "LOGOUT"
 
-[node name="ProfileButton" type="Button" parent="."]
+[node name="QuitButton" parent="." instance=ExtResource( 1 )]
 margin_left = 1224.0
 margin_top = 847.0
-margin_right = 1667.0
+margin_right = 1665.0
 margin_bottom = 970.0
+rect_pivot_offset = Vector2( 200, 100 )
 custom_fonts/font = ExtResource( 5 )
-text = "PROFILO"
+script = null
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="Menu/DatiPazientiButton" to="." method="_on_DatiPazientiButton_pressed"]
+[connection signal="pressed" from="Menu/ProfileButton" to="." method="_on_ProfileButton_pressed"]
 [connection signal="pressed" from="Menu/CreditsButton" to="." method="_on_CreditsButton_pressed"]
-[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="LogoutButton" to="." method="_on_LogoutButton_pressed"]
-[connection signal="pressed" from="ProfileButton" to="." method="_on_ProfileButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
