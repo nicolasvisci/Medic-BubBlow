@@ -130,18 +130,15 @@ script = null
 visible = false
 modulate = Color( 1, 1, 1, 0.784314 )
 anchor_left = 0.5
-anchor_top = 0.91875
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.91875
+anchor_bottom = 1.0
 margin_left = -250.0
-margin_top = -242.25
+margin_top = -270.0
 margin_right = 250.0
-margin_bottom = -158.25
+margin_bottom = -186.0
 theme = ExtResource( 1 )
 custom_styles/panel = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Notification" type="Label" parent="NotificationPanel"]
 margin_left = 2.0

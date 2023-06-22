@@ -9,7 +9,7 @@ onready var name_patient_3 : LineEdit = $HBoxContainer4/LineEdit
 onready var surname_patient_3 : LineEdit = $HBoxContainer4/LineEdit2
 onready var notification_panel : PanelContainer = $NotificationPanel
 onready var notification : Label = $NotificationPanel/Notification
-var count := 1
+var count := 0
 
 var timer = Timer.new()
 var hide_delay = 2
@@ -69,6 +69,7 @@ func _on_Button33_pressed():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
+	#print(result_body.documents[1].name)
 	if(count == 1):
 		name_patient_1.text = result_body.fields.name.stringValue
 		surname_patient_1.text = result_body.fields.surname.stringValue
