@@ -62,7 +62,7 @@ margin_right = 1765.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
 
-[node name="Cognome" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="Dati" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 881.0
 margin_bottom = 80.0
 custom_fonts/font = ExtResource( 1 )
@@ -113,7 +113,7 @@ size_flags_horizontal = 3
 custom_constants/separation = 50
 alignment = 1
 
-[node name="Button31" type="Button" parent="HBoxContainer5/HBoxContainer"]
+[node name="ButtonFirstMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
 margin_left = 280.0
 margin_right = 686.0
 margin_bottom = 90.0
@@ -123,7 +123,7 @@ custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
 text = "MODALITA 1"
 
-[node name="Button32" type="Button" parent="HBoxContainer5/HBoxContainer"]
+[node name="ButtonSecondMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
 margin_left = 736.0
 margin_right = 1142.0
 margin_bottom = 90.0
@@ -133,7 +133,7 @@ custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
 text = "MODALITA 2"
 
-[node name="Button33" type="Button" parent="HBoxContainer5/HBoxContainer"]
+[node name="ButtonThirdMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
 margin_left = 1192.0
 margin_right = 1598.0
 margin_bottom = 90.0
@@ -176,8 +176,8 @@ align = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="HBoxContainer5/HBoxContainer/Button31" to="." method="_on_Button31_pressed"]
-[connection signal="pressed" from="HBoxContainer5/HBoxContainer/Button32" to="." method="_on_Button32_pressed"]
-[connection signal="pressed" from="HBoxContainer5/HBoxContainer/Button33" to="." method="_on_Button33_pressed"]
+[connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonFirstMode" to="." method="_on_ButtonFirstMode_pressed"]
+[connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonSecondMode" to="." method="_on_ButtonSecondMode_pressed"]
+[connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonThirdMode" to="." method="_on_ButtonThirdMode_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

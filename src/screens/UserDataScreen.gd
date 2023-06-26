@@ -1,15 +1,16 @@
 extends Control
 
 onready var http : HTTPRequest = $HTTPRequest
+
 onready var name_patient : LineEdit = $Name
 onready var surname_patient : LineEdit = $Surname
+
 onready var games : Label = $HBoxContainer1/Games_1
 onready var high : Label = $HBoxContainer3/High_1
 onready var count_mode_1 : LineEdit = $HBoxContainer2/Games_1
-onready var count_mode_2 : LineEdit = $HBoxContainer2/Games_2
-onready var dec_avg : LineEdit = $HBoxContainer2/dec_avg
 onready var high_mode_1 : LineEdit = $HBoxContainer4/High_1
-onready var high_mode_2 : LineEdit = $HBoxContainer4/High_2
+
+onready var dec_avg : LineEdit = $HBoxContainer2/dec_avg
 onready var breath_duration : LineEdit = $HBoxContainer4/Breath
 onready var score : LineEdit = $HBoxContainer6/Score
 onready var game_duration : LineEdit = $HBoxContainer6/Duration
