@@ -5,9 +5,7 @@ signal life_counter_updated
 signal player_died
 signal game_resumed
 
-var patient_id_1 := "ON2MVg91NlMjODREg3QvIzV652k1"
-var patient_id_2 := ""
-var patient_id_3 := "xm1EadLn2hMdBnMCfRlqFm6kvF82"
+var patients = []
 var game_mode := 0
 var name_user := ""
 var surname_user := ""
@@ -33,7 +31,7 @@ var last_score_second_mode := 0
 var decibel_avg:= 0.0
 var game_duration:= ""
 var breath_duration:= ""
-var user_flag := 1
+var user_flag := 0
 var get_flag := 0
 var first_mode := false
 var second_mode := false
