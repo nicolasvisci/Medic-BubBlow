@@ -19,7 +19,7 @@ func _get_configuration_warning():
 func _on_DetailsButton_pressed():
 	if(PlayerData.first_mode == true || PlayerData.second_mode == true || PlayerData.third_mode == true):
 		PlayerData.user_flag = positions
-		get_tree().change_scene("res://src/screens/UserDataScreen.tscn")
+		get_tree().change_scene("res://src/screens/Games.tscn")
 
 func set_user(position: int):
 	positions = position

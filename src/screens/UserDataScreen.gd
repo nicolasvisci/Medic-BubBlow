@@ -2,8 +2,8 @@ extends Control
 
 onready var http : HTTPRequest = $HTTPRequest
 
-onready var name_patient : LineEdit = $Name
-onready var surname_patient : LineEdit = $Surname
+onready var name_patient : LineEdit = $HBoxContainer/Name
+onready var surname_patient : LineEdit = $HBoxContainer/Surname
 
 onready var games : Label = $HBoxContainer1/Games_1
 onready var high : Label = $HBoxContainer3/High_1
@@ -31,10 +31,10 @@ func _ready():
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	if(PlayerData.get_flag == 2):
-		dec_avg.text = str(result_body.documents[0].fields.decibel_avg.doubleValue) + " db"
-		breath_duration.text = result_body.documents[0].fields.breath_duration.stringValue
-		score.text = str(result_body.documents[0].fields.score.integerValue) + " pnt"
-		game_duration.text = result_body.documents[0].fields.game_duration.stringValue
+		dec_avg.text = str(result_body.documents[PlayerData.game_flag].fields.decibel_avg.doubleValue) + " db"
+		breath_duration.text = result_body.documents[PlayerData.game_flag].fields.breath_duration.stringValue
+		score.text = str(result_body.documents[PlayerData.game_flag].fields.score.integerValue) + " pnt"
+		game_duration.text = result_body.documents[PlayerData.game_flag].fields.game_duration.stringValue
 	elif(PlayerData.get_flag == 1):
 		if(PlayerData.first_mode == true):
 			games.text = "Partite giocate modalita 1" 
@@ -56,11 +56,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 
 
 func _on_Button_pressed():
-	reset_flag()
-	get_tree().change_scene("res://src/screens/TableScreen.tscn")
-
-func reset_flag():
 	PlayerData.get_flag = 0
-	PlayerData.first_mode = false
-	PlayerData.second_mode = false
-	PlayerData.third_mode = false
+	get_tree().change_scene("res://src/screens/Games.tscn")
+
+

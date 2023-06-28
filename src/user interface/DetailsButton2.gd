@@ -3,6 +3,7 @@ extends Button
 
 export(String, FILE) var next_scene_path: = ""
 
+var positions
 
 func _on_button_down():
 	self.rect_scale = Vector2(0.8, 0.8)
@@ -16,4 +17,9 @@ func _get_configuration_warning():
 
 
 func _on_DetailsButton_pressed():
-	PlayerData.user_flag = 2
+	if(PlayerData.first_mode == true || PlayerData.second_mode == true || PlayerData.third_mode == true):
+		PlayerData.game_flag = positions
+		get_tree().change_scene("res://src/screens/UserDataScreen.tscn")
+
+func set_user(position: int):
+	positions = position - 1

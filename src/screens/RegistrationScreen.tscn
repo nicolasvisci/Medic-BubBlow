@@ -1,17 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=1]
 [ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/RegistrationScreen.gd" type="Script" id=3]
-[ext_resource path="res://src/screens/prova.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/user interface/backgrounds/BackgroundApp.png" type="Texture" id=4]
+[ext_resource path="res://assets/user interface/themes/DarkTheme/Fonts/Ubuntu-L.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/user interface/themes/DarkTheme/StyleBox/Panel.stylebox" type="StyleBox" id=6]
+[ext_resource path="res://assets/user interface/themes/main_theme.tres" type="Theme" id=8]
 [ext_resource path="res://src/user interface/QuitButton.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 5 )
 
 [node name="RegistrationScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1919.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+expand = true
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -20,14 +32,9 @@ margin_left = -252.0
 margin_top = 50.0
 margin_right = 252.0
 margin_bottom = 130.0
-custom_fonts/font = ExtResource( 5 )
+theme = ExtResource( 8 )
 text = "Registrazione"
 uppercase = true
-
-[node name="Background" type="TextureRect" parent="."]
-margin_right = 1919.0
-margin_bottom = 1080.0
-expand = true
 
 [node name="Menu1" type="VBoxContainer" parent="."]
 anchor_left = 0.206771
@@ -47,7 +54,6 @@ __meta__ = {
 margin_right = 582.0
 margin_bottom = 108.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 placeholder_text = "Nome"
@@ -57,7 +63,6 @@ margin_top = 123.0
 margin_right = 582.0
 margin_bottom = 231.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 placeholder_text = "Cognome"
@@ -67,7 +72,6 @@ margin_top = 246.0
 margin_right = 582.0
 margin_bottom = 354.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
 align = 1
 placeholder_text = "Email"
 
@@ -76,7 +80,6 @@ margin_top = 369.0
 margin_right = 582.0
 margin_bottom = 477.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 10
 secret = true
@@ -87,7 +90,6 @@ margin_top = 492.0
 margin_right = 582.0
 margin_bottom = 600.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
 align = 1
 secret = true
 placeholder_text = "Codice Medico"
@@ -106,7 +108,6 @@ custom_constants/separation = 15
 margin_right = 583.0
 margin_bottom = 117.0
 rect_pivot_offset = Vector2( 200, 100 )
-custom_fonts/font = ExtResource( 5 )
 text = "REGISTRATI"
 
 [node name="AlreadyRegisteredButton" parent="Menu2" instance=ExtResource( 2 )]
@@ -114,14 +115,12 @@ margin_top = 132.0
 margin_right = 583.0
 margin_bottom = 249.0
 rect_pivot_offset = Vector2( 200, 100 )
-custom_fonts/font = ExtResource( 5 )
 text = "HO UN ACCOUNT"
 
 [node name="QuitButton" parent="Menu2" instance=ExtResource( 9 )]
 margin_top = 264.0
 margin_right = 583.0
 margin_bottom = 381.0
-custom_fonts/font = ExtResource( 5 )
 script = null
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
@@ -148,7 +147,7 @@ margin_bottom = 82.0
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 autowrap = true
 __meta__ = {
