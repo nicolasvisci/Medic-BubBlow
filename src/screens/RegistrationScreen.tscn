@@ -4,7 +4,7 @@
 [ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/RegistrationScreen.gd" type="Script" id=3]
 [ext_resource path="res://assets/user interface/backgrounds/BackgroundApp.png" type="Texture" id=4]
-[ext_resource path="res://assets/user interface/themes/DarkTheme/Fonts/Ubuntu-L.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/user interface/themes/Barlow/Barlow-Light.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/user interface/themes/DarkTheme/StyleBox/Panel.stylebox" type="StyleBox" id=6]
 [ext_resource path="res://assets/user interface/themes/main_theme.tres" type="Theme" id=8]
 [ext_resource path="res://src/user interface/QuitButton.tscn" type="PackedScene" id=9]
@@ -136,7 +136,6 @@ margin_left = -250.0
 margin_top = -270.0
 margin_right = 250.0
 margin_bottom = -186.0
-theme = ExtResource( 1 )
 custom_styles/panel = ExtResource( 6 )
 
 [node name="Notification" type="Label" parent="NotificationPanel"]
@@ -145,8 +144,7 @@ margin_top = 2.0
 margin_right = 498.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 0.996078, 1 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 autowrap = true

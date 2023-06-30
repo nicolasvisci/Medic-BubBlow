@@ -20,6 +20,10 @@ var name_patient = "" # Nome paziente in tabella
 var surname_patient = "" # Cognome paziente in tabella
 var documents # Lista di tutti i pazienti
 
+var game_duration
+var breath_duration_max
+var decibel_avg
+
 func _ready():
 	PlayerData.games.resize(50)
 	remove_leaderboard_scrollbar()
@@ -53,19 +57,19 @@ func populate_leaderboard_buttons():
 	
 	var campoPartita_instance_1 = campoPartita1_text.instance()
 	campoPartita_instance_1.add_color_override("font_color", Color(255,255,255,255))
-	campoPartita_instance_1.text = "Dato 1"
+	campoPartita_instance_1.text = game_duration
 	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
 	leaderboard_patient_container1.add_child(campoPartita_instance_1)
 	
 	var campoPartita_instance_2 = campoPartita2_text.instance()
 	campoPartita_instance_2.add_color_override("font_color", Color(255,255,255,255))
-	campoPartita_instance_2.text = "Dato 2"
+	campoPartita_instance_2.text = breath_duration_max
 	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
 	leaderboard_patient_container1.add_child(campoPartita_instance_2)
 	
 	var campoPartita_instance_3 = campoPartita3_text.instance()
 	campoPartita_instance_3.add_color_override("font_color", Color(255,255,255,255))
-	campoPartita_instance_3.text = "Dato 3"
+	campoPartita_instance_3.text = decibel_avg
 	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
 	leaderboard_patient_container1.add_child(campoPartita_instance_3)
 	
@@ -75,10 +79,12 @@ func populate_leaderboard_buttons():
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	documents = result_body["documents"]
-	print(documents)
 	for doc in documents:
 		count_game += 1
 		var documentData = doc["fields"]
+		game_duration = documentData.game_duration.stringValue
+		breath_duration_max = documentData.breath_duration.stringValue
+		decibel_avg = str(documentData.decibel_avg.doubleValue)
 		var documentId = doc["name"]
 		var uid = documentId.split("/")
 		var uid_game = uid[8]

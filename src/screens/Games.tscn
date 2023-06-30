@@ -3,8 +3,10 @@
 [ext_resource path="res://src/screens/Games.gd" type="Script" id=1]
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=2]
 [ext_resource path="res://assets/user interface/themes/main_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/user interface/themes/DarkTheme/StyleBox/Panel.stylebox" type="StyleBox" id=4]
 [ext_resource path="res://assets/user interface/backgrounds/BackgroundApp.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.384314, 0.27451, 0.917647, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.639216, 0.658824, 0.996078, 1 )
@@ -38,22 +40,20 @@ margin_left = 75.5
 margin_top = 130.0
 margin_right = 1844.5
 margin_bottom = 230.0
-custom_styles/bg = ExtResource( 4 )
+custom_styles/bg = SubResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 1767.0
-margin_bottom = 86.0
+margin_right = 1769.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
-margin_right = 880.0
+margin_right = 882.0
 margin_bottom = 84.0
 size_flags_horizontal = 3
 
 [node name="Games" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
-margin_right = 880.0
+margin_right = 882.0
 margin_bottom = 84.0
 custom_colors/font_color = Color( 1, 1, 0.996078, 1 )
 custom_fonts/font = ExtResource( 3 )
@@ -61,13 +61,13 @@ text = "PARTITA:"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
-margin_left = 884.0
-margin_right = 1765.0
+margin_left = 886.0
+margin_right = 1769.0
 margin_bottom = 84.0
 size_flags_horizontal = 3
 
 [node name="Dati" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 881.0
+margin_right = 883.0
 margin_bottom = 84.0
 custom_colors/font_color = Color( 1, 1, 0.996078, 1 )
 custom_fonts/font = ExtResource( 3 )
@@ -103,34 +103,32 @@ margin_right = 1768.0
 margin_bottom = 490.0
 size_flags_horizontal = 3
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 17.0
-margin_top = 858.0
-margin_right = 1901.0
-margin_bottom = 999.0
-size_flags_horizontal = 4
-size_flags_vertical = 3
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -319.0
+margin_top = -172.0
+margin_right = 319.0
+margin_bottom = -82.0
 custom_constants/separation = 50
-alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer"]
-margin_left = 698.0
-margin_right = 992.0
-margin_bottom = 141.0
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+margin_right = 294.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
 text = "INDIETRO"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
-margin_left = 1042.0
-margin_right = 1186.0
-margin_bottom = 141.0
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+margin_left = 344.0
+margin_right = 638.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
 text = "ESCI"
 
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

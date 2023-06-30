@@ -54,17 +54,7 @@ margin_bottom = 73.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-
-[node name="Games_2" type="Label" parent="HBoxContainer1"]
-visible = false
-margin_left = 639.0
-margin_top = 22.0
-margin_right = 1274.0
-margin_bottom = 64.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 5 )
-text = "Partite giocate mod. 2"
+align = 1
 
 [node name="dec_avg" type="Label" parent="HBoxContainer1"]
 margin_left = 958.0
@@ -74,7 +64,8 @@ margin_bottom = 73.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-text = "Media Decibel"
+text = "Forza respiro"
+align = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_left = 2.0
@@ -85,16 +76,6 @@ theme = ExtResource( 2 )
 
 [node name="Games_1" type="LineEdit" parent="HBoxContainer2"]
 margin_right = 130.0
-margin_bottom = 86.0
-size_flags_horizontal = 2
-custom_fonts/font = ExtResource( 5 )
-align = 1
-expand_to_text_length = true
-
-[node name="Games_2" type="LineEdit" parent="HBoxContainer2"]
-visible = false
-margin_left = 639.0
-margin_right = 745.0
 margin_bottom = 86.0
 size_flags_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
@@ -123,17 +104,7 @@ margin_bottom = 73.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-
-[node name="High_2" type="Label" parent="HBoxContainer3"]
-visible = false
-margin_left = 639.0
-margin_top = 22.0
-margin_right = 1274.0
-margin_bottom = 64.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 5 )
-text = "Miglior punteggio mod. 2"
+align = 1
 
 [node name="Breath" type="Label" parent="HBoxContainer3"]
 margin_left = 958.0
@@ -143,7 +114,8 @@ margin_bottom = 73.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
-text = "Durata respiro"
+text = "Durata respiro MAX"
+align = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="."]
 margin_left = 3.0
@@ -154,16 +126,6 @@ theme = ExtResource( 2 )
 
 [node name="High_1" type="LineEdit" parent="HBoxContainer4"]
 margin_right = 130.0
-margin_bottom = 90.0
-size_flags_horizontal = 2
-custom_fonts/font = ExtResource( 5 )
-align = 1
-expand_to_text_length = true
-
-[node name="High_2" type="LineEdit" parent="HBoxContainer4"]
-visible = false
-margin_left = 639.0
-margin_right = 745.0
 margin_bottom = 90.0
 size_flags_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
@@ -193,6 +155,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
 text = "Durata partita"
+align = 1
 
 [node name="Score" type="Label" parent="HBoxContainer5"]
 margin_left = 958.0
@@ -203,17 +166,7 @@ size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 5 )
 text = "Punteggio partita"
-
-[node name="Breath" type="Label" parent="HBoxContainer5"]
-visible = false
-margin_left = 1277.0
-margin_top = 24.0
-margin_right = 1912.0
-margin_bottom = 66.0
-size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 5 )
-text = "Durata respiro"
+align = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="."]
 margin_left = 4.0
@@ -233,16 +186,6 @@ expand_to_text_length = true
 [node name="Score" type="LineEdit" parent="HBoxContainer6"]
 margin_left = 959.0
 margin_right = 1089.0
-margin_bottom = 90.0
-size_flags_horizontal = 2
-custom_fonts/font = ExtResource( 5 )
-align = 1
-expand_to_text_length = true
-
-[node name="Breath" type="LineEdit" parent="HBoxContainer6"]
-visible = false
-margin_left = 1278.0
-margin_right = 1384.0
 margin_bottom = 90.0
 size_flags_horizontal = 2
 custom_fonts/font = ExtResource( 5 )

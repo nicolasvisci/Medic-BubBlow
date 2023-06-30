@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/user interface/ChangeSceneButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/user interface/themes/DarkTheme/StyleBox/Panel.stylebox" type="StyleBox" id=2]
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=3]
 [ext_resource path="res://assets/user interface/backgrounds/BackgroundApp.png" type="Texture" id=4]
 [ext_resource path="res://src/screens/LoginScreen.gd" type="Script" id=5]
+[ext_resource path="res://assets/user interface/themes/Barlow/Barlow-Light.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 6 )
 
 [node name="LoginScreen" type="Control"]
 anchor_right = 1.0
@@ -103,7 +108,6 @@ margin_left = -250.0
 margin_top = -95.0627
 margin_right = 250.0
 margin_bottom = -11.0627
-theme = ExtResource( 3 )
 custom_styles/panel = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -115,8 +119,8 @@ margin_top = 2.0
 margin_right = 498.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 0.996078, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 autowrap = true
 __meta__ = {
