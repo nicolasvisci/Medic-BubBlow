@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/user interface/themes/MinimalUI/MinimalUI.tres" type="Theme" id=1]
 [ext_resource path="res://assets/user interface/themes/main_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/user interface/backgrounds/BackgroundApp.png" type="Texture" id=3]
-[ext_resource path="res://assets/user interface/themes/main_theme.tres" type="Theme" id=4]
 [ext_resource path="res://src/screens/ProfileScreen.gd" type="Script" id=5]
 [ext_resource path="res://assets/user interface/items/pincode.png" type="Texture" id=9]
 
@@ -49,7 +48,7 @@ size = Vector2( 64, 64 )
 [node name="ProfileScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 4 )
+theme = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -63,7 +62,6 @@ margin_left = 830.0
 margin_top = 48.0
 margin_right = 1040.0
 margin_bottom = 128.0
-custom_fonts/font = ExtResource( 2 )
 text = "Profilo"
 uppercase = true
 

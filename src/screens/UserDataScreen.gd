@@ -37,18 +37,18 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		game_duration.text = result_body.documents[PlayerData.game_flag].fields.game_duration.stringValue
 	elif(PlayerData.get_flag == 1):
 		if(PlayerData.first_mode == true):
-			games.text = "Partite giocate modalita 1" 
-			high.text = "Miglior punteggio modalita 1"
+			games.text = "Partite giocate livello BOLLE" 
+			high.text = "Miglior punteggio livello BOLLE"
 			count_mode_1.text = str(result_body.fields.games_first_mode_count.integerValue)
 			high_mode_1.text = str(result_body.fields.highscore_first_mode.integerValue) + " pnt"
 		elif(PlayerData.second_mode == true):
-			games.text = "Partite giocate modalita 2"
-			high.text = "Miglior punteggio modalita 2" 
+			games.text = "Partite giocate livello RUNNER"
+			high.text = "Miglior punteggio livello RUNNER" 
 			count_mode_1.text = str(result_body.fields.games_second_mode_count.integerValue)
 			high_mode_1.text = str(result_body.fields.highscore_second_mode.integerValue) + " pnt"
 		elif(PlayerData.third_mode == true):
-			games.text = "Partite giocate modalita 3"
-			high.text = "Miglior punteggio modalita 3" 
+			games.text = "Partite giocate livello BERSAGLI"
+			high.text = "Miglior punteggio livello BERSAGLI" 
 			count_mode_1.text = str(result_body.fields.games_third_mode_count.integerValue)
 			high_mode_1.text = str(result_body.fields.highscore_third_mode.integerValue) + " pnt"
 		name_patient.text = result_body.fields.name.stringValue
@@ -59,4 +59,5 @@ func _on_Button_pressed():
 	PlayerData.get_flag = 0
 	get_tree().change_scene("res://src/screens/Games.tscn")
 
-
+func _on_Quit_pressed():
+	get_tree().quit()

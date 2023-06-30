@@ -33,7 +33,6 @@ margin_left = -242.0
 margin_top = 30.0
 margin_right = 242.0
 margin_bottom = 110.0
-custom_fonts/font = ExtResource( 1 )
 text = "LISTA PAZIENTI:"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -108,63 +107,67 @@ margin_left = 890.0
 margin_right = 1768.0
 margin_bottom = 490.0
 size_flags_horizontal = 3
-custom_constants/separation = 15
-alignment = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="."]
-margin_left = 17.0
+margin_left = 1.0
 margin_top = 764.0
-margin_right = 1896.0
+margin_right = 1919.0
 margin_bottom = 854.0
 size_flags_horizontal = 2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer5"]
-margin_right = 1879.0
+margin_right = 1918.0
 margin_bottom = 90.0
 size_flags_horizontal = 3
 custom_constants/separation = 50
 alignment = 1
 
 [node name="ButtonFirstMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
-margin_left = 324.0
-margin_right = 692.0
+margin_left = 94.0
+margin_right = 581.0
 margin_bottom = 90.0
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = ExtResource( 5 )
-custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
-text = "MODALITA 1"
+text = "LIVELLO BOLLE"
 
 [node name="ButtonSecondMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
-margin_left = 742.0
-margin_right = 1124.0
+margin_left = 631.0
+margin_right = 1176.0
 margin_bottom = 90.0
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = ExtResource( 5 )
-custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
-text = "MODALITA 2"
+text = "LIVELLO RUNNER"
 
 [node name="ButtonThirdMode" type="Button" parent="HBoxContainer5/HBoxContainer"]
-margin_left = 1174.0
-margin_right = 1555.0
+margin_left = 1226.0
+margin_right = 1823.0
 margin_bottom = 90.0
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = ExtResource( 5 )
-custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
-text = "MODALITA 3"
+text = "LIVELLO BERSAGLI"
 
-[node name="Button" type="Button" parent="."]
+[node name="HBoxContainer6" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -142.0
-margin_top = -180.0
-margin_right = 142.0
-margin_bottom = -83.0
+margin_left = -331.0
+margin_top = -172.0
+margin_right = 307.0
+margin_bottom = -82.0
+theme = ExtResource( 4 )
+custom_constants/separation = 50
+
+[node name="Back" type="Button" parent="HBoxContainer6"]
+margin_right = 294.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "INDIETRO"
+
+[node name="Quit" type="Button" parent="HBoxContainer6"]
+margin_left = 344.0
+margin_right = 638.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 text = "ESCI"
@@ -192,5 +195,6 @@ align = 1
 [connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonFirstMode" to="." method="_on_ButtonFirstMode_pressed"]
 [connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonSecondMode" to="." method="_on_ButtonSecondMode_pressed"]
 [connection signal="pressed" from="HBoxContainer5/HBoxContainer/ButtonThirdMode" to="." method="_on_ButtonThirdMode_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer6/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="HBoxContainer6/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

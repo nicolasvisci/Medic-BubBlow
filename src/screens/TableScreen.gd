@@ -94,3 +94,11 @@ func show_label():
 
 func hide_label():
 	notification_panel.hide()
+
+
+func _on_Back_pressed():
+	get_tree().change_scene("res://src/screens/MenuScreen.tscn")
+
+
+func _on_Quit_pressed():
+	get_tree().quit()

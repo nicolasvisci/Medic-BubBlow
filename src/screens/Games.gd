@@ -8,6 +8,9 @@ onready var leaderboard_name_container1: VBoxContainer = $ScrollContainer2/HBoxC
 onready var leaderboard_patient_container1: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2 # Sezione bottoni DETTAGLI
 
 var leaderboard_text = preload("res://src/user interface/LeaderboardText.tscn")
+var campoPartita1_text = preload("res://src/user interface/CampoPartita.tscn")
+var campoPartita2_text = preload("res://src/user interface/CampoPartita.tscn")
+var campoPartita3_text = preload("res://src/user interface/CampoPartita.tscn")
 var leaderboard_details_button_1 = preload("res://src/user interface/DetailsButton2.tscn")
 
 var count_button := 0 # Bottoni Dettagli istanziati
@@ -45,15 +48,34 @@ func populate_leaderboard_names():
 	leaderboard_text_instance.text = "Partita " + str(count_game)
 
 func populate_leaderboard_buttons():
-	leaderboard_patient_text.text = "DATI"
+	leaderboard_patient_text.text = "DATI:"
 	var leaderboard_details_button_instance_1 = leaderboard_details_button_1.instance()
+	
+	var campoPartita_instance_1 = campoPartita1_text.instance()
+	campoPartita_instance_1.add_color_override("font_color", Color(255,255,255,255))
+	campoPartita_instance_1.text = "Dato 1"
 	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
+	leaderboard_patient_container1.add_child(campoPartita_instance_1)
+	
+	var campoPartita_instance_2 = campoPartita2_text.instance()
+	campoPartita_instance_2.add_color_override("font_color", Color(255,255,255,255))
+	campoPartita_instance_2.text = "Dato 2"
+	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
+	leaderboard_patient_container1.add_child(campoPartita_instance_2)
+	
+	var campoPartita_instance_3 = campoPartita3_text.instance()
+	campoPartita_instance_3.add_color_override("font_color", Color(255,255,255,255))
+	campoPartita_instance_3.text = "Dato 3"
+	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
+	leaderboard_patient_container1.add_child(campoPartita_instance_3)
+	
 	count_button += 1
 	leaderboard_details_button_instance_1.set_user(count_button)
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	documents = result_body["documents"]
+	print(documents)
 	for doc in documents:
 		count_game += 1
 		var documentData = doc["fields"]

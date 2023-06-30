@@ -249,20 +249,37 @@ custom_fonts/font = ExtResource( 5 )
 align = 1
 expand_to_text_length = true
 
-[node name="Button" type="Button" parent="."]
+[node name="HBoxContainer7" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -154.5
-margin_top = -180.0
-margin_right = 154.5
-margin_bottom = -98.0
+margin_left = -331.0
+margin_top = -172.0
+margin_right = 307.0
+margin_bottom = -82.0
+theme = ExtResource( 2 )
+custom_constants/separation = 50
+
+[node name="Back" type="Button" parent="HBoxContainer7"]
+margin_right = 294.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 text = "INDIETRO"
 
+[node name="Quit" type="Button" parent="HBoxContainer7"]
+margin_left = 344.0
+margin_right = 638.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "ESCI"
+
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer7/Back" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer7/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
