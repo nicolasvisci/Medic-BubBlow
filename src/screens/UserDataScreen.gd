@@ -10,7 +10,9 @@ onready var high : Label = $HBoxContainer3/High_1
 onready var count_mode_1 : LineEdit = $HBoxContainer2/Games_1
 onready var high_mode_1 : LineEdit = $HBoxContainer4/High_1
 
-onready var dec_avg : LineEdit = $HBoxContainer2/dec_avg
+#onready var dec_avg : LineEdit = $HBoxContainer2/HBoxContainer/dec_avg
+onready var dec_avg_line : Label = $HBoxContainer1/dec_avg
+onready var progressBar : ProgressBar = $HBoxContainer2/HBoxContainer/ProgressBar
 onready var breath_duration : LineEdit = $HBoxContainer4/Breath
 onready var score : LineEdit = $HBoxContainer6/Score
 onready var game_duration : LineEdit = $HBoxContainer6/Duration
@@ -31,7 +33,17 @@ func _ready():
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	if(PlayerData.get_flag == 2):
-		dec_avg.text = str(result_body.documents[PlayerData.game_flag].fields.decibel_avg.doubleValue) + " db"
+		#dec_avg.text = str(result_body.documents[PlayerData.game_flag].fields.decibel_avg.doubleValue) + " db"
+		progressBar.value = (80 - result_body.documents[PlayerData.game_flag].fields.decibel_avg.doubleValue * -1)
+		if(progressBar.value > 30 && progressBar.value < 60):
+			dec_avg_line.add_color_override("font_color", Color(255,216,0))
+			dec_avg_line.text += ": Buono"
+		elif(progressBar.value > 60):
+			dec_avg_line.add_color_override("font_color", Color(0,255,0))
+			dec_avg_line.text += ": Eccellente"
+		elif(progressBar.value < 30):
+			dec_avg_line.add_color_override("font_color", Color(255,0,0))
+			dec_avg_line.text += ": Debole"
 		breath_duration.text = result_body.documents[PlayerData.game_flag].fields.breath_duration.stringValue
 		score.text = str(result_body.documents[PlayerData.game_flag].fields.score.integerValue) + " pnt"
 		game_duration.text = result_body.documents[PlayerData.game_flag].fields.game_duration.stringValue

@@ -6,6 +6,11 @@ onready var leaderboard_patient_text : Label = $ScrollContainer/HBoxContainer/VB
 onready var leaderboard_scroll2 : ScrollContainer = $ScrollContainer2 # Corpo tabella
 onready var leaderboard_name_container1: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer # Sezione nomi e cognomi
 onready var leaderboard_patient_container1: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2 # Sezione bottoni DETTAGLI
+onready var hboxcontainer: HBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2/HBoxContainer # Sezione bottoni DETTAGLI
+onready var campo1: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2/HBoxContainer/campo1 # Sezione bottoni DETTAGLI
+onready var campo2: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2/HBoxContainer/campo2 # Sezione bottoni DETTAGLI
+onready var campo3: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2/HBoxContainer/campo3 # Sezione bottoni DETTAGLI
+onready var button: VBoxContainer = $ScrollContainer2/HBoxContainer/VBoxContainer2/HBoxContainer/button
 
 var leaderboard_text = preload("res://src/user interface/LeaderboardText.tscn")
 var campoPartita1_text = preload("res://src/user interface/CampoPartita.tscn")
@@ -22,7 +27,8 @@ var documents # Lista di tutti i pazienti
 
 var game_duration
 var breath_duration_max
-var decibel_avg
+var score
+#var decibel_avg
 
 func _ready():
 	PlayerData.games.resize(50)
@@ -52,26 +58,26 @@ func populate_leaderboard_names():
 	leaderboard_text_instance.text = "Partita " + str(count_game)
 
 func populate_leaderboard_buttons():
-	leaderboard_patient_text.text = "DATI:"
+	leaderboard_patient_text.text = "DURATA PARTITA - DURATA RESPIRO MAX - PUNTI PARTITA"
 	var leaderboard_details_button_instance_1 = leaderboard_details_button_1.instance()
-	
 	var campoPartita_instance_1 = campoPartita1_text.instance()
+	var campoPartita_instance_2 = campoPartita2_text.instance()
+	var campoPartita_instance_3 = campoPartita3_text.instance()
+	
 	campoPartita_instance_1.add_color_override("font_color", Color(255,255,255,255))
 	campoPartita_instance_1.text = game_duration
-	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
-	leaderboard_patient_container1.add_child(campoPartita_instance_1)
+	campo1.add_child(campoPartita_instance_1)
 	
-	var campoPartita_instance_2 = campoPartita2_text.instance()
 	campoPartita_instance_2.add_color_override("font_color", Color(255,255,255,255))
 	campoPartita_instance_2.text = breath_duration_max
-	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
-	leaderboard_patient_container1.add_child(campoPartita_instance_2)
+	campo2.add_child(campoPartita_instance_2)
 	
-	var campoPartita_instance_3 = campoPartita3_text.instance()
 	campoPartita_instance_3.add_color_override("font_color", Color(255,255,255,255))
-	campoPartita_instance_3.text = decibel_avg
-	leaderboard_patient_container1.add_child(leaderboard_details_button_instance_1)
-	leaderboard_patient_container1.add_child(campoPartita_instance_3)
+	#campoPartita_instance_3.text = decibel_avg + " db"
+	campoPartita_instance_3.text = score + " pnt"
+	campo3.add_child(campoPartita_instance_3)
+	
+	button.add_child(leaderboard_details_button_instance_1)
 	
 	count_button += 1
 	leaderboard_details_button_instance_1.set_user(count_button)
@@ -84,7 +90,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		var documentData = doc["fields"]
 		game_duration = documentData.game_duration.stringValue
 		breath_duration_max = documentData.breath_duration.stringValue
-		decibel_avg = str(documentData.decibel_avg.doubleValue)
+		score = documentData.score.integerValue
+		#decibel_avg = str(80 - int(documentData.decibel_avg.doubleValue) * -1)
 		var documentId = doc["name"]
 		var uid = documentId.split("/")
 		var uid_game = uid[8]
